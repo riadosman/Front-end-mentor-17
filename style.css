@@ -1,0 +1,274 @@
+:root {
+    --Dark-blue: hsl(209, 23%, 22%);
+    --Very-Dark-blue: hsl(207, 26%, 17%);
+    --Very-Dark-blue-t: hsl(200, 15%, 8%);
+    --Dark-Gray: hsl(0, 0%, 52%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Home-page-Item-s: 14px;
+    --Detail-page: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--Very-Light-Gray);
+    color: var(--Very-Dark-blue-t);
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: var(--White);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 70px;
+    font-size: var(--Home-page-Item-s);
+}
+
+header #mode {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 60px;
+}
+
+.menu input {
+    color: var(--Dark-Gray);
+    width: 400px;
+    padding: 15px 70px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #ccc;
+    position: absolute;
+    outline: none;
+}
+
+.menu .search i {
+    position: relative;
+    z-index: 100;
+    left: 40px;
+    top: 15px;
+}
+
+.dropdown button {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    width: 200px;
+    text-align: left;
+    background-color: var(--White);
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 4px #ccc;
+}
+
+.menu ul {
+    display: none;
+    position: absolute;
+    width: 200px;
+    list-style-type: none;
+    box-shadow: 0px 0px 4px #ccc;
+    padding: 10px;
+    background-color: var(--White);
+}
+
+.menu ul li {
+    margin: 10px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cards {
+    padding: 0px 80px 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 320px);
+    flex-wrap: wrap;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 250px;
+    height: 320px;
+    background-color: var(--White);
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.card img {
+    width: 250px;
+    min-height: 160px;
+}
+
+.card .content {
+    padding: 10px 20px;
+}
+
+.card .content p {
+    font-weight: 600;
+}
+
+.card .content span {
+    font-weight: 300;
+}
+
+.details {
+    width: 100%;
+    height: 80%;
+    padding: 70px 70px 100px;
+    overflow: hidden;
+}
+
+.details button {
+    background-color: var(--White);
+    border: none;
+    padding: 10px 40px;
+    box-shadow: 0px 0px 4px #ccc;
+    cursor: pointer;
+}
+
+.details button i {
+    margin-right: 10px;
+}
+
+.details .content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details .content img {
+    width: 40%;
+    height: 30%;
+}
+
+.content .text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content .text h1 {
+    text-transform: capitalize;
+}
+
+.text ul.info {
+    height: 200px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.text ul.info li {
+    font-size: var(--Detail-page);
+    margin: 7px 0;
+}
+
+.text ul.info li span,
+.text .border-countries p {
+    font-weight: 700;
+}
+
+.text .border-countries {
+    display: flex;
+    align-items: center;
+}
+
+.text .border-countries ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.text .border-countries ul li {
+    text-transform: capitalize;
+    padding: 5px 15px;
+    box-shadow: 0px 0px 4px #ccc;
+    margin: 0 5px;
+}
+
+@media (max-width:375px) {
+    header {
+        padding: 20px;
+        font-size: 0.5rem;
+    }
+
+    .menu {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .menu input {
+        width: 235px;
+        position: static;
+        padding: 10px;
+        padding-left: 50px;
+    }
+
+    .menu .search i {
+        top: 0;
+    }
+
+    .dropdown {
+        margin-top: 35px;
+    }
+
+    .cards {
+        padding: 20px;
+        grid-template-columns: repeat(1, 320px);
+    }
+
+    .details .content {
+        display: block;
+    }
+
+    .details {
+        padding: 30px;
+    }
+
+    .details .content img {
+        width: 100%;
+    }
+
+    .text ul.info {
+        display: block;
+    }
+
+    .content .text {
+        width: 100%;
+        gap: 30px;
+    }
+
+    .text .border-countries {
+        display: block;
+        /* margin: 20px; */
+        margin-top: 50px;
+    }
+
+    .text .border-countries ul {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
